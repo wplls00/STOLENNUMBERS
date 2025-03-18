@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>MNIST digits classification with a simple JS neural network</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="s-panel">
+  <div class="board" id="board">
+    <div class="s-board-hint"><span>draw any number between 0 and 9</span></div>
+  </div>
+  <div class="s-ui">
+    <button name="btnrecognize">Recognize</button>
+    <button name="btnclear">Clear</button>
+    <label>
+      <input type="checkbox" name="autoupdate"/>Auto update
+    </label>
+    <div class="s-prediction" id="s-prediction"></div>
+    <div class="s-train-image" id="s-train-image"></div>
+    <div class="s-predictions" id="s-predictions"></div>
+  </div>
+</div>
+<div class="loader" id="loader"><span>loading...</span></div>
+<!-- partial -->
+  <script src='https://account.denis3d.ru/js-simple-nn/weights.oop.0.9475.dat'></script>
+<script src='https://account.denis3d.ru/js-simple-nn/weights.oop.0.9410.dat'></script>
+<script src='https://account.denis3d.ru/js-simple-nn/weights.oop.0.9283.dat'></script><script  src="./script.js"></script>
+
+</body>
+</html>

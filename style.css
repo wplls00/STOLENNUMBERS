@@ -1,0 +1,315 @@
+html {
+  font-size: 16px;
+}
+html,
+body,
+div {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  background: #ffef80;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+body .s-panel {
+  opacity: 0;
+}
+body.loaded .s-panel {
+  opacity: 1;
+  transition: opacity ease-out 0.75s;
+}
+body.loaded .loader {
+  display: none;
+}
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: #92eba5;
+  color: #444;
+  font: 600 0.75rem Tahoma, Verdana, sans-serif;
+  letter-spacing: 0.65rem;
+}
+.loader > span {
+  position: relative;
+  margin-top: -8rem;
+}
+.loader:before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 25px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -25px;
+  margin-left: -25px;
+  animation: 2.5s infinite growupanddown;
+}
+.loader:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  border-radius: 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  animation: 1.25s infinite growupanddown;
+}
+@keyframes growupanddown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.board {
+  display: block;
+  position: relative;
+  margin: 1rem;
+  padding: 1rem;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  font-size: 1rem;
+  color: #fff;
+  white-space: pre;
+  font-family: monospace;
+}
+.board i {
+  font-style: normal;
+}
+.board .red {
+  color: #ec5151;
+}
+.board .orange {
+  color: #db930c;
+}
+.board .green {
+  color: #11e940;
+}
+.board .blue {
+  color: #6cb6fc;
+}
+.board:hover .s-board-hint {
+  display: none;
+}
+.s-panel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+}
+.s-ui {
+  display: block;
+  background: #fff6b5;
+  width: 300px;
+  height: auto;
+  margin: 1rem 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.s-ui button {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto 0.6rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.s-ui select {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto 0.6rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.s-ui select option {
+  font-size: 1rem;
+}
+.s-ui .stats {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+  font-family: Tahoma;
+  line-height: 1.5;
+  color: #000000;
+  background: #ffffff;
+  text-align: left;
+}
+.s-image {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin: 0.5rem auto 0;
+  padding: 0;
+  background: #fff;
+}
+.s-prediction {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0.5rem auto 0;
+  padding: 0.5rem;
+  background: #fff;
+  font-size: 1.25rem;
+}
+.s-prediction b.A {
+  font-size: 150%;
+}
+.s-prediction b.B {
+  font-size: 125%;
+}
+.s-prediction b.C {
+  font-size: 100%;
+}
+.s-prediction b.D {
+  font-size: 75%;
+}
+.s-predictions {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0.5rem auto 0;
+  padding: 0.5rem;
+  background: #fff;
+  font-size: 1.25rem;
+  box-sizing: border-box;
+}
+.s-predictions b.A {
+  font-size: 150%;
+}
+.s-predictions b.B {
+  font-size: 125%;
+}
+.s-predictions b.C {
+  font-size: 100%;
+}
+.s-predictions b.D {
+  font-size: 75%;
+}
+.s-predictions .s-item {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0.125rem 0.5rem;
+  background: #fff;
+  box-sizing: border-box;
+}
+.s-predictions .s-item label {
+  display: flex;
+  background: #92eba5;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+.s-predictions .s-item label span {
+  vertical-align: top;
+  padding: 0 0 0 0.5rem;
+}
+.s-train-image {
+  display: block;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  margin: 0.5rem auto 0;
+  padding: 0;
+  background: #fff;
+}
+.s-train-image > canvas {
+  width: 100%;
+  height: 100%;
+}
+label {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0.5rem auto;
+  height: auto;
+  padding: 0;
+  font-size: 1.75rem;
+  text-align: left;
+}
+label input[type="checkbox"] {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+}
+.s-board-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: 4px dotted #555;
+  z-index: 10;
+  color: #000;
+  opacity: 0.15;
+}
+.s-board-hint > span {
+  display: block;
+  width: 80%;
+  font-size: 2rem;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.5;
+  font-weight: 600;
+}
+@media screen and (max-width: 1000px) {
+  .s-panel {
+    flex-direction: column;
+  }
+  .s-ui {
+    margin: 0 1rem 1rem;
+    width: 500px;
+    box-sizing: content-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .s-panel .board {
+    width: 320px;
+    height: 320px;
+  }
+  .s-ui {
+    margin: 0 1rem 1rem;
+    width: 320px;
+    box-sizing: content-box;
+  }
+}
