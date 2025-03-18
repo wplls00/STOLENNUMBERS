@@ -8,10 +8,10 @@ const init = event => {
   let AUTO_UPDATE = false;
 
   // @TODO download and create NNs
-  if (window.DNN_1) nns.push(createNN(window.DNN_1, "DNN_1"));
-  if (window.DNN_2) nns.push(createNN(window.DNN_2, "DNN_2"));
-  if (window.DNN_3) nns.push(createNN(window.DNN_3, "DNN_3"));
-  if (window.DNN_4) nns.push(createNN(window.DNN_4, "DNN_4"));
+  if (window.DNN_1) nns.push(createNN(window.DNN_1, "M1"));
+  if (window.DNN_2) nns.push(createNN(window.DNN_2, "M2"));
+  if (window.DNN_3) nns.push(createNN(window.DNN_3, "M3"));
+  if (window.DNN_4) nns.push(createNN(window.DNN_4, "M4"));
   //console.log(nns)
   // create UI elements for NNs
   createNetworkElements(predict);
@@ -91,11 +91,11 @@ const init = event => {
     //console.log(prediction)
     const pred = argmax(prediction, 4);
     showPrediction(`
-      The number is <b class="A">${pred[0].oldIndex}</b> (${(
+      Цифра -  <b class="A">${pred[0].oldIndex}</b> (${(
     pred[0].value * 100).
     toFixed(2)}%)
       <br />
-      But also can be: <br />
+      Также возможно: <br />
       <b class="B">${pred[1].oldIndex}</b> (${(pred[1].value * 100).toFixed(
     2)
     }%);<br />
