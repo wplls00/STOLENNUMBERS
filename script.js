@@ -1,27 +1,3 @@
-/**
- * MNIST digits classification.
- *
- * A simple JS neural network implementation, written from scratch
- * as part of my personal "programming kata" routine.
- * It was originally written without using the internet,
- * books and even my own code snippets.
- * To be honest, initially there were a lot of bugs.
- *
- * Since I haven't implemented convolutional layers,
- * the accuracy of the network is not as high as I wanted.
- * Some models are good at classifying a certain set of numbers, 
- * others recognize another set. So, to improve predictive power, 
- * I decided to use four models and average their results.
- *
- * The models were trained on the MNIST dataset.
- *
- * p.s.: Guys don't use JS for such tasks,
- * because python provides much better tools!
- *
- * @version 0.1.7
- * @author Denis Khakimov <denisdude@gmail.com>
- */
-
 // array of NNs
 const nns = [];
 const init = event => {
