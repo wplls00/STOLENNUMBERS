@@ -25,12 +25,12 @@ const init = event => {
   const ctx = canvas.getContext("2d");
   const ctxTrain = canvasTrain.getContext("2d");
 
-  DIAMETER = 50 * canvas.width / 500;
+  DIAMETER = 30 * canvas.width / 500;
 
   if (true) {
     ctx.filter = "blur(2px)";
-    ctx.imageSmoothingEnabled = true;
-    ctxTrain.imageSmoothingEnabled = true;
+    ctx.imageSmoothingEnabled = false;
+    ctxTrain.imageSmoothingEnabled = false;
     ctxTrain.imageSmoothingQuality = "high";
   }
 
