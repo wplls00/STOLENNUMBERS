@@ -111,9 +111,6 @@ body.loaded .loader {
 .board .blue {
   color: #6cb6fc;
 }
-.board:hover .s-board-hint {
-  display: none;
-}
 .s-panel {
   display: flex;
   justify-content: flex-start;
